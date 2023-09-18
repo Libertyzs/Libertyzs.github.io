@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=true"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'true');
+</script>
+<!-- End Google Analytics -->
+
+  
+<!-- Global site tag (gtag.js) - Baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?true";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- End Baidu Analytics -->
+
+  
+<!-- Gaug.es Analytics -->
+<script>
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', 'true');
+    t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
+    t.src = 'https://d36ee2fcip1434.cloudfront.net/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+<!-- End Gaug.es Analytics -->
+
+
+  
+  <title>test | Libertyzs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <meta name="description" content="Hexo-GitHub部署魔改第一步_config.yml1. config.yml12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838">
+<meta property="og:type" content="article">
+<meta property="og:title" content="test">
+<meta property="og:url" content="https://libertyzs.github.io/2023/09/18/Hexo-GitHub%E9%83%A8%E7%BD%B2%E9%AD%94%E6%94%B9%E7%AC%AC%E4%B8%80%E6%AD%A5-config/index.html">
+<meta property="og:site_name" content="Libertyzs">
+<meta property="og:description" content="Hexo-GitHub部署魔改第一步_config.yml1. config.yml12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://libertyzs.github.io/2023/09/18/Hexo-GitHub%E9%83%A8%E7%BD%B2%E9%AD%94%E6%94%B9%E7%AC%AC%E4%B8%80%E6%AD%A5-config/Hexo-GitHub%E9%83%A8%E7%BD%B2%E9%AD%94%E6%94%B9%E7%AC%AC%E4%B8%80%E6%AD%A5-config/2794716-20230918160359880-427128084.png">
+<meta property="og:image" content="https://libertyzs.github.io/Hexo-GitHub%E9%83%A8%E7%BD%B2%E9%AD%94%E6%94%B9%E7%AC%AC%E4%B8%80%E6%AD%A5-config/2794716-20230918161203935-1519916386.png">
+<meta property="og:image" content="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918161455191-439286439.png">
+<meta property="og:image" content="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918164113881-954760273.png">
+<meta property="og:image" content="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918173259235-1272142549.png">
+<meta property="og:image" content="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918173310679-1854690462.png">
+<meta property="og:image" content="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918173302614-2132079924.png">
+<meta property="og:image" content="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918165016904-1708163901.png">
+<meta property="og:image" content="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918165336255-245649519.png">
+<meta property="og:image" content="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918165705573-312788699.png">
+<meta property="og:image" content="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918165812442-1607527862.png">
+<meta property="og:image" content="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918173222936-1448552999.png">
+<meta property="og:image" content="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918173219686-1169005834.png">
+<meta property="og:image" content="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918173215984-294161790.png">
+<meta property="article:published_time" content="2023-09-18T06:51:10.000Z">
+<meta property="article:modified_time" content="2023-09-18T09:34:42.601Z">
+<meta property="article:author" content="niu">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="vivia">
+<meta property="article:tag" content="config.yml">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://libertyzs.github.io/2023/09/18/Hexo-GitHub%E9%83%A8%E7%BD%B2%E9%AD%94%E6%94%B9%E7%AC%AC%E4%B8%80%E6%AD%A5-config/Hexo-GitHub%E9%83%A8%E7%BD%B2%E9%AD%94%E6%94%B9%E7%AC%AC%E4%B8%80%E6%AD%A5-config/2794716-20230918160359880-427128084.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Libertyzs" type="application/atom+xml">
+  
+  
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-192.png" sizes="192x192">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-192.png" sizes="192x192">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/images/icon/banner.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>Libertyzs </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="light-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M438.5-829.913v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-829.913Zm0 747.826v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-82.087ZM877.913-438.5h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537t29.476-12.174h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T877.913-438.5Zm-747.826 0h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T82.087-521.5h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T130.087-438.5Zm660.174-290.87-34.239 32q-12.913 12.674-29.565 12.174-16.653-.5-29.327-13.174-12.674-12.673-12.554-28.826.12-16.152 12.794-28.826l33-35q12.913-12.674 30.454-12.674t30.163 12.847q12.709 12.846 12.328 30.826-.38 17.98-13.054 30.653ZM262.63-203.978l-32 34q-12.913 12.674-30.454 12.674t-30.163-12.847q-12.709-12.846-12.328-30.826.38-17.98 13.054-30.653l33.239-31q12.913-12.674 29.565-12.174 16.653.5 29.327 13.174 12.674 12.673 12.554 28.826-.12 16.152-12.794 28.826Zm466.74 33.239-32-33.239q-12.674-12.913-12.174-29.565.5-16.653 13.174-29.327 12.673-12.674 28.826-13.054 16.152-.38 28.826 12.294l35 33q12.674 12.913 12.674 30.454t-12.847 30.163q-12.846 12.709-30.826 12.328-17.98-.38-30.653-13.054ZM203.978-697.37l-34-33q-12.674-12.913-13.174-29.945-.5-17.033 12.174-29.707t31.326-13.293q18.653-.62 31.326 13.054l32 34.239q11.674 12.913 11.174 29.565-.5 16.653-13.174 29.327-12.673 12.674-28.826 12.554-16.152-.12-28.826-12.794ZM480-240q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm-.247-82q65.703 0 111.475-46.272Q637-414.544 637-480.247t-45.525-111.228Q545.95-637 480.247-637t-111.475 45.525Q323-545.95 323-480.247t45.525 111.975Q414.05-322 479.753-322ZM481-481Z"/></svg></span>
+      <span class="dark-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M480.239-116.413q-152.63 0-258.228-105.478Q116.413-327.37 116.413-480q0-130.935 77.739-227.435t206.304-125.043q43.022-9.631 63.87 10.869t3.478 62.805q-8.891 22.043-14.315 44.463-5.424 22.42-5.424 46.689 0 91.694 64.326 155.879 64.325 64.186 156.218 64.186 24.369 0 46.978-4.946 22.609-4.945 44.413-14.076 42.826-17.369 62.967 1.142 20.142 18.511 10.511 61.054Q807.174-280 712.63-198.206q-94.543 81.793-232.391 81.793Zm0-95q79.783 0 143.337-40.217 63.554-40.218 95.793-108.283-15.608 4.044-31.097 5.326-15.49 1.283-31.859.805-123.706-4.066-210.777-90.539-87.071-86.473-91.614-212.092-.24-16.369.923-31.978 1.164-15.609 5.446-30.978-67.826 32.478-108.282 96.152Q211.652-559.543 211.652-480q0 111.929 78.329 190.258 78.329 78.329 190.258 78.329ZM466.13-465.891Z"/></svg></span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS Feed">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M198-120q-25.846 0-44.23-18.384-18.384-18.385-18.384-44.23 0-25.846 18.384-44.23 18.384-18.385 44.23-18.385 25.846 0 44.23 18.385 18.384 18.384 18.384 44.23 0 25.845-18.384 44.23Q223.846-120 198-120Zm538.385 0q-18.846 0-32.923-13.769-14.076-13.769-15.922-33.23-8.692-100.616-51.077-188.654-42.385-88.039-109.885-155.539-67.5-67.501-155.539-109.885Q283-663.462 182.385-672.154q-19.461-1.846-33.23-16.23-13.769-14.385-13.769-33.846t14.076-32.922q14.077-13.461 32.923-12.23 120.076 8.692 226.038 58.768 105.961 50.077 185.73 129.846 79.769 79.769 129.846 185.731 50.077 105.961 58.769 226.038 1.231 18.846-12.538 32.922Q756.461-120 736.385-120Zm-252 0q-18.231 0-32.423-13.461t-18.653-33.538Q418.155-264.23 348.886-333.5q-69.27-69.27-166.501-84.423-20.077-4.462-33.538-18.961-13.461-14.5-13.461-33.346 0-19.076 13.884-33.23 13.884-14.153 33.115-10.922 136.769 15.384 234.384 112.999 97.615 97.615 112.999 234.384 3.231 19.23-10.538 33.115Q505.461-120 484.385-120Z"/></svg>
+      </a>
+    
+    <div id="nav-menu-btn" class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M177.37-252.282q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Zm0-186.218q-17.453 0-29.477-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T177.37-521.5h605.26q17.453 0 29.477 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T782.63-438.5H177.37Zm0-186.217q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Z"/></svg>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS Feed">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/images/icon/icon_t2.jpg></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">Liberty </div>
+      <div class="dot"></div>
+      <div class="subtitle">Java Adventure </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://twitter.com" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://store.steampowered.com" title="Steam"><i class="fa-brands fa-steam"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com" title="GitHub"><i class="fa-brands fa-github"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Categories</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/Java/">
+                Java
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E8%B4%B9%E9%9B%B7/">
+                费雷
+                <div class="category-count">2</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Hexo/">
+                Hexo
+                <div class="category-count">1</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Tags</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/123123/" rel="tag">123123</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaSE/" rel="tag">JavaSE</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Pdf/" rel="tag">Pdf</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/categories/" rel="tag">categories</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/config-yml/" rel="tag">config.yml</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/niu/" rel="tag">niu</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vivia/" rel="tag">vivia</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94u%E5%95%8A%E4%BD%A0%E6%8A%8A/" rel="tag">随笔u啊你把</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Archives</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          September 2023 
+          <div class="archive-count">8 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Recent Posts</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/09/18/%E6%96%87%E7%AB%A01/" title="文章1" >
+            <div class="recent-link-text">
+              文章1
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/18/JavaSE/" title="JavaSE" >
+            <div class="recent-link-text">
+              JavaSE
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/18/test2/" title="test2" >
+            <div class="recent-link-text">
+              test2
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/18/test/" title="test" >
+            <div class="recent-link-text">
+              test
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/18/Hexo-GitHub%E9%83%A8%E7%BD%B2%E9%AD%94%E6%94%B9%E7%AC%AC%E4%B8%80%E6%AD%A5-config/" title="test" >
+            <div class="recent-link-text">
+              test
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-Hexo-GitHub部署魔改第一步-config" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        test
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-09-18T06:51:10.000Z" itemprop="datePublished">2023-09-18</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Hexo/">Hexo</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            6.9k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/config-yml/" rel="tag">config.yml</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vivia/" rel="tag">vivia</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h1 id="Hexo-GitHub部署魔改第一步-config-yml"><a href="#Hexo-GitHub部署魔改第一步-config-yml" class="headerlink" title="Hexo-GitHub部署魔改第一步_config.yml"></a>Hexo-GitHub部署魔改第一步_config.yml</h1><h2 id="1-config-yml"><a href="#1-config-yml" class="headerlink" title="1. config.yml"></a>1. config.yml</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hexo Configuration</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/configuration.html</span></span><br><span class="line"><span class="comment">## Source: https://github.com/hexojs/hexo/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="comment"># 设置博客的标题</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Your</span> <span class="string">Blog</span> <span class="string">Title</span></span><br><span class="line"><span class="comment"># 子标题，可选</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&#x27;xxxxx&#x27;</span></span><br><span class="line"><span class="comment"># 博客的描述，可选</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># 关键词，可选</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="comment"># 作者信息</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Your</span> <span class="string">Name</span></span><br><span class="line"><span class="comment"># 博客语言</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span></span><br><span class="line"><span class="comment"># 时区</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## 设置你的博客网址。例如，如果你使用GitHub Page，将url设置为 &#x27;https://username.github.io/project&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://your-blog-url.com</span></span><br><span class="line"><span class="comment"># 文章的永久链接结构</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"><span class="comment"># 是否使用美化的URL（去除.html和index.html）</span></span><br><span class="line"><span class="attr">pretty_urls:</span></span><br><span class="line">  <span class="attr">trailing_index:</span> <span class="literal">true</span> <span class="comment"># 设置为false以删除永久链接中的&#x27;index.html&#x27;</span></span><br><span class="line">  <span class="attr">trailing_html:</span> <span class="literal">true</span> <span class="comment"># 设置为false以删除永久链接中的&#x27;.html&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="comment"># 源文件夹</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span></span><br><span class="line"><span class="comment"># 公共文件夹</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span></span><br><span class="line"><span class="comment"># 标签文件夹</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span></span><br><span class="line"><span class="comment"># 存档文件夹</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span></span><br><span class="line"><span class="comment"># 分类文件夹</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span></span><br><span class="line"><span class="comment"># 代码文件夹</span></span><br><span class="line"><span class="attr">code_dir:</span> <span class="string">downloads/code</span></span><br><span class="line"><span class="comment"># 国际化文件夹</span></span><br><span class="line"><span class="attr">i18n_dir:</span> <span class="string">:lang</span></span><br><span class="line"><span class="attr">skip_render:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="comment"># 新文章的文件名格式</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:title.md</span> <span class="comment"># 新文章的文件名为标题</span></span><br><span class="line"><span class="comment"># 默认布局</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="comment"># 标题是否转换为标题样式</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># 不将标题转换为标题样式</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># 在新标签页中打开外部链接</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">site</span> <span class="comment"># 应用于整个站点</span></span><br><span class="line">  <span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># 文件名大小写</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="comment"># 渲染草稿</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br><span class="line"><span class="comment"># 文章的附件文件夹</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># 相对链接</span></span><br><span class="line"><span class="attr">relative_link:</span> <span class="literal">false</span></span><br><span class="line"><span class="comment"># 未来文章</span></span><br><span class="line"><span class="attr">future:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">auto_detect:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attr">wrap:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">hljs:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">prismjs:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">preprocess:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Home page setting</span></span><br><span class="line"><span class="comment"># 首页设置</span></span><br><span class="line"><span class="comment"># 路径：博客首页的根路径（默认为空）</span></span><br><span class="line"><span class="comment"># 每页显示的文章数（0 = 禁用分页）</span></span><br><span class="line"><span class="comment"># 文章的排序方式（默认按日期降序）</span></span><br><span class="line"><span class="attr">index_generator:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line">  <span class="attr">order_by:</span> <span class="string">-date</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line"><span class="comment"># 默认分类</span></span><br><span class="line"><span class="attr">default_category:</span> <span class="string">uncategorized</span></span><br><span class="line"><span class="attr">category_map:</span></span><br><span class="line"><span class="attr">tag_map:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Metadata elements</span></span><br><span class="line"><span class="comment">## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta</span></span><br><span class="line"><span class="comment"># 元数据生成器</span></span><br><span class="line"><span class="attr">meta_generator:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Date / Time format</span></span><br><span class="line"><span class="comment">## Hexo 使用 Moment.js 来解析和显示日期</span></span><br><span class="line"><span class="comment">## 你可以按照定义的格式自定义日期格式</span></span><br><span class="line"><span class="attr">date_format:</span> <span class="string">YYYY-MM-DD</span></span><br><span class="line"><span class="attr">time_format:</span> <span class="string">HH:mm:ss</span></span><br><span class="line"><span class="comment">## updated_option 支持 &#x27;mtime&#x27;, &#x27;date&#x27;, &#x27;empty&#x27;</span></span><br><span class="line"><span class="attr">updated_option:</span> <span class="string">&#x27;mtime&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## 设置每页显示的文章数，设置为0以禁用分页</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">12</span></span><br><span class="line"><span class="attr">pagination_dir:</span> <span class="string">page</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Include / Exclude file(s)</span></span><br><span class="line"><span class="comment">## include:/exclude: 选项仅适用于&#x27;source/&#x27;文件夹</span></span><br><span class="line"><span class="attr">include:</span></span><br><span class="line"><span class="attr">exclude:</span></span><br><span class="line"><span class="attr">ignore:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## 插件: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## 主题: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">vivia</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">	<span class="attr">type:</span> <span class="string">git</span> </span><br><span class="line"><span class="comment">##git: 这个字段指定了部署的类型，这里设置为git，表示你将使用Git作为部署工具。</span></span><br><span class="line">	<span class="attr">repository:</span> <span class="string">git@github.com:Username/Username.github.io.git</span></span><br><span class="line"><span class="comment">## 这个字段指定了你的博客部署到的Git仓库的地址。在这里，你将博客部署到了GitHub上的</span></span><br><span class="line">	<span class="attr">branch:</span> <span class="string">main</span></span><br><span class="line"><span class="comment">## 分支，这里和github上面是对应的。 这个字段指定了要将博客部署到哪个Git分支。在这里，博客将被部署到main分支。</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-基础修改"><a href="#2-基础修改" class="headerlink" title="2. 基础修改"></a>2. 基础修改</h2><h3 id="图2-1-git地址："><a href="#图2-1-git地址：" class="headerlink" title="图2.1 git地址："></a>图2.1 git地址：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">主题修改：</span><br><span class="line">theme，我是用的是hexo的vivia。 https://hexo.io/themes/</span><br><span class="line"></span><br><span class="line">部署设置：</span><br><span class="line">deploy，按照上面的含义进行修改，</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<img src="Hexo-GitHub部署魔改第一步-config/2794716-20230918160359880-427128084.png" alt="image-20230918160358216" style="zoom: 80%;" />
+
+<center style ="font-size:14px;text-decoration:underline">图2.1</center>
+
+<h3 id="图2-2-分页数："><a href="#图2-2-分页数：" class="headerlink" title="图2.2 分页数："></a>图2.2 分页数：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">设置 6 的倍数。</span><br><span class="line"></span><br><span class="line">## 设置每页显示的文章数，设置为0以禁用分页</span><br><span class="line">per_page: 12</span><br><span class="line">pagination_dir: page</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Hexo-GitHub%E9%83%A8%E7%BD%B2%E9%AD%94%E6%94%B9%E7%AC%AC%E4%B8%80%E6%AD%A5-config/2794716-20230918161203935-1519916386.png" alt="image-20230918161202490"></p>
+<center style="text-decoraion:underline">图2.2</center>
+
+<h3 id="图2-3-基础信息："><a href="#图2-3-基础信息：" class="headerlink" title="图2.3 基础信息："></a>图2.3 基础信息：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line"># 设置博客的标题</span><br><span class="line">title: Your Blog Title</span><br><span class="line"># 子标题，可选</span><br><span class="line">subtitle: &#x27;xxxxx&#x27;</span><br><span class="line"># 博客的描述，可选</span><br><span class="line">description: &#x27;&#x27;</span><br><span class="line"># 关键词，可选</span><br><span class="line">keywords:</span><br><span class="line"># 作者信息</span><br><span class="line">author: Your Name</span><br><span class="line"># 博客语言</span><br><span class="line">language: en</span><br><span class="line"># 时区</span><br><span class="line">timezone: &#x27;&#x27;</span><br></pre></td></tr></table></figure>
+
+<img src="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918161455191-439286439.png" alt="image-20230918161453755"  />
+
+<center style="text-decoration:underline">图2.3</center>
+
+
+
+<h2 id="3-主题vivia配置文件"><a href="#3-主题vivia配置文件" class="headerlink" title="3. 主题vivia配置文件"></a>3. 主题vivia配置文件</h2><p>对修改部分进行中文注释</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Header</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">Home:</span> <span class="string">/</span></span><br><span class="line">  <span class="attr">Archives:</span> <span class="string">/archives</span></span><br><span class="line">  <span class="attr">About:</span> <span class="string">/about</span></span><br><span class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></span><br><span class="line"></span><br><span class="line"><span class="attr">home:</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">default</span>           <span class="comment"># default, detail</span></span><br><span class="line"><span class="comment">## 这里home页有两种设置：default：文章内容不展开。 detail：文章内容展开  （仅个人测试发现内容，勿喷）</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">favicon:</span> </span><br><span class="line"><span class="comment">## 浏览器标签页的网站图标</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Banner 我的主题的背景图</span></span><br><span class="line"><span class="attr">banner:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>            <span class="comment"># Display banner：是否开启，我这里开启</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">images/icon/banner.jpg</span> </span><br><span class="line">  <span class="comment">## 背景图片位置，这里在source目录下创建了一个images，并在里面放自己的图片。友情提示：放在source里面，不会被clean掉，苏鸥翼放心把一些静态资源放在这里，不过放的太多会影响部署速度。我这里只放了网站需要的几张图片</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">center</span>         </span><br><span class="line">  <span class="attr">onAllPages:</span> <span class="literal">true</span>         <span class="comment"># 是否所有的页面均显示背景图片</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Appearence</span></span><br><span class="line"><span class="attr">hue:</span> <span class="number">135</span>                <span class="comment"># 主题颜色，修改数值进行修改</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Sidebar</span></span><br><span class="line"><span class="attr">sidebar:</span></span><br><span class="line">  <span class="attr">widgets:</span>                 <span class="comment"># Plugins to be enabled (profile, category, tag, archive, recent_posts)</span></span><br><span class="line">    <span class="attr">normal:</span>                <span class="comment"># Scroll along with the page</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">profile</span></span><br><span class="line">    <span class="attr">sticky:</span>                <span class="comment"># Stick to the top of the page</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">category</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">tag</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">archive</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">recent_posts</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Widget behavior</span></span><br><span class="line"><span class="attr">archive_type:</span> <span class="string">&#x27;monthly&#x27;</span></span><br><span class="line"><span class="attr">recent_posts_limits:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="attr">max_depth:</span>              <span class="comment"># Maximum depth of categories displayed in the widget (null for unlimited)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Personal info</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">images/icon/icon_t2.jpg</span> </span><br><span class="line"><span class="comment">## 图像照片，和上面的 brnner -url一样</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Liberty</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">Java</span> <span class="string">Adventure</span></span><br><span class="line"><span class="attr">links:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Twitter</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fa-brands</span> <span class="string">fa-twitter</span>      <span class="comment"># Find icon codes at https://fontawesome.com/search</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://twitter.com</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Steam</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fa-brands</span> <span class="string">fa-steam</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://store.steampowered.com</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">GitHub</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">fa-brands</span> <span class="string">fa-github</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://github.com</span></span><br><span class="line"></span><br><span class="line"><span class="attr">comment:</span></span><br><span class="line">  <span class="attr">valine:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span>               <span class="comment">## 评论</span></span><br><span class="line">    <span class="attr">appId:</span> </span><br><span class="line">    <span class="attr">appKey:</span> </span><br><span class="line">    <span class="attr">placeholder:</span> <span class="string">Just</span> <span class="string">go</span> <span class="string">go</span></span><br><span class="line">    <span class="attr">pageSize:</span> <span class="number">10</span></span><br><span class="line">    <span class="attr">highlight:</span> <span class="literal">true</span>           <span class="comment">##高亮显示</span></span><br><span class="line">    <span class="attr">serverURLs:</span> </span><br><span class="line">    <span class="comment"># Other supported parameters can be added here if needed</span></span><br><span class="line">    <span class="comment"># Visit https://valine.js.org/configuration.html for more details</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#Analytics</span></span><br><span class="line"><span class="attr">gauges_analytics:</span> <span class="literal">true</span>          <span class="comment">## 选开</span></span><br><span class="line"><span class="attr">google_analytics:</span> <span class="literal">true</span> <span class="comment">#UA-xxxxxx</span></span><br><span class="line"><span class="attr">baidu_analytics:</span> <span class="literal">true</span> <span class="comment"># ddxxxxxxxxxxxxxxxxx In the https://hm.baidu.com/hm.js? Afterwards</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Copyright</span></span><br><span class="line"><span class="attr">copyright:</span> <span class="comment">#&lt;a target=&quot;_blank&quot; rel=&quot;noopener&quot; href=&quot;http://creativecommons.org/licenses/by-nc-sa/4.0/&quot; style=&quot;margin-inline:5px&quot; title=&quot;本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;amp;logo=Claris&quot;&gt;&lt;/a&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-source文件夹操作"><a href="#4-source文件夹操作" class="headerlink" title="4.source文件夹操作"></a>4.source文件夹操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source文件内容在hexo clean时，不会被删除可以存放一些静态资源</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918164113881-954760273.png" alt="image-20230918164112466"></p>
+<center style="text-decoration:underline">图4.1</center>
+
+<h3 id="typora图片导入"><a href="#typora图片导入" class="headerlink" title="typora图片导入"></a>typora图片导入</h3><p>命令安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-img --save</span><br><span class="line">或</span><br><span class="line">cnpm install hexo-asset-img --save</span><br><span class="line">或</span><br><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<p>修改项目的 _config.yml配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+
+
+
+<p>typora图像设置：如图4.2设置</p>
+<p><img src="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918173259235-1272142549.png" alt="image-20230918170857498"></p>
+<center style="text-decoration:underline">图4.2</center>
+
+<p>使用方法：</p>
+<p>在hexo的根目录下输入 hexo new 文章名：如图4.3</p>
+<p><img src="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918173310679-1854690462.png" alt="image-20230918171040799"></p>
+<center style="text-decoration:underline">图4.3</center>
+
+<p>效果展示：使用成功后，会在_posts目录下生成一个md文章和一样名称的文件夹。</p>
+<p>该文件夹用于存放你文章中的图片，也就是我们之前在typora中设置的.&#x2F;${filename}。</p>
+<p>上传成功后，就可以成功在博客中显示</p>
+<p><img src="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918173302614-2132079924.png" alt="image-20230918171157028"></p>
+<center style="text-decoration:underline">图4.4</center>
+
+
+
+
+
+<h3 id="文章分类"><a href="#文章分类" class="headerlink" title="文章分类"></a>文章分类</h3><p>命令成功后会出现图4.1 中的categories</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories   ## 创建分类属性</span><br></pre></td></tr></table></figure>
+
+<p>成功回显：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Created: ~/blog/source/categories/index.md</span><br></pre></td></tr></table></figure>
+
+<p>修改categories目录下index.md内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分类</span><br><span class="line">date: 2023-09-27 13:47:40</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>到这里就设置成功了</p>
+<p>使用方法：图4.2 中test 和test2 中添加了categories属性，并设置内容费雷，那么这两篇文章就是一个类别下面的</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 这是默认的写法，给文章添加一个分类。</span><br><span class="line">categories: 123</span><br><span class="line"># 这会将文章分类123/456子分类目录下。</span><br><span class="line">categories: [123, 456]</span><br><span class="line">这会将文章分类到123/456子分类目录下。</span><br><span class="line">categories:</span><br><span class="line">   - 123</span><br><span class="line">   - 456</span><br><span class="line">多标签写法，文章被分类到123、456以及123的自分类789这3个分类下面，官方指定写法。</span><br><span class="line">categories:</span><br><span class="line">   - [123]</span><br><span class="line">   - [456]</span><br><span class="line">   - [123, 789]</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918165016904-1708163901.png" alt="image-20230918165015402"></p>
+<center style="text-decoration:underline">图4.5</center>
+
+<p>效果展示：</p>
+<p>图4.3 为文章分类效果展示，这里可以看到费雷里面有两篇文章，实现了分类。</p>
+<p><img src="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918165336255-245649519.png" alt="image-20230918165334725"></p>
+<center style="text-decoration:underline">图4.6</center>
+
+
+
+<h3 id="文章标签"><a href="#文章标签" class="headerlink" title="文章标签"></a>文章标签</h3><p>命令成功，实现图4.1中的tags</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<p>成功回显：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Created: ~/blog/source/tags/index.md</span><br></pre></td></tr></table></figure>
+
+<p>修改tags目录下index.md内容如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章标签</span><br><span class="line">date: 2023-09-27 13:47:40</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>到这里就设置成功</p>
+<p>使用方法：如图4.4 设置tags属性，并添加标签</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tags:</span><br><span class="line">  - 123</span><br><span class="line">  - 456</span><br><span class="line">tags: [123, 456]</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918165705573-312788699.png" alt="image-20230918165703909"></p>
+<center style="text-decoration:underline">图4.7</center>
+
+
+
+<p>效果展示：图4.5 显示了所有文章的标签</p>
+<p><img src="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918165812442-1607527862.png" alt="image-20230918165811093"></p>
+<center style="text-decoration:underline">图4.8</center>
+
+
+
+<h3 id="静态图片"><a href="#静态图片" class="headerlink" title="静态图片"></a>静态图片</h3><p>如图4.1 我在source下创建了images目录，并在里面放置了静态资源（图片）。并且在主题配置文件中，直接使用路径然后就可以访问到这个静态资源图片，并且在后续使用hexo clean 也不会删除这个资源。</p>
+<h3 id="pdf设置"><a href="#pdf设置" class="headerlink" title="pdf设置"></a>pdf设置</h3><p>命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-pdf </span><br><span class="line">或</span><br><span class="line">cnpm install --save hexo-pdf </span><br></pre></td></tr></table></figure>
+
+
+
+<p>修改项目的 _config.yml配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+
+
+
+<p>正常创建文章（在hexo根目录下）：如图：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new JavaSE</span><br></pre></td></tr></table></figure>
+
+<p>生成md 和文件夹</p>
+<p><img src="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918173222936-1448552999.png" alt="image-20230918171505269"></p>
+<center style="text-decoration:underline">图4.9</center>
+
+<p>md文档内容设置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在线显示PDF --&gt;  &lt;!-- 第一种方式，可调整pdf显示的大小，比较灵活 --&gt; </span><br><span class="line"></span><br><span class="line">&lt;embed src=&quot;./java.pdf&quot; width=&quot;100%&quot; height=&quot;750&quot; type=&quot;application/pdf&quot;&gt; </span><br><span class="line"></span><br><span class="line"> &lt;!-- 第二种方式 --&gt; &lt;!-- &#123;% pdf ./java.pdf %&#125; --&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>文件夹下设置：如图4.10</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这里的内容在md与md 文章中src的需要一致</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918173219686-1169005834.png" alt="image-20230918171650828"></p>
+<center style="text-decoration:underline">图4.10</center>
+
+
+
+<p>效果展示：如图4.11</p>
+<p><img src="https://img2023.cnblogs.com/blog/2794716/202309/2794716-20230918173215984-294161790.png" alt="image-20230918171812817"></p>
+<center style="text-decoration:underline">
+图4.11
+</center>
+
+
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/09/18/test/"
+      title="test"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        test
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/09/18/%E6%A0%87%E7%AD%BE1/"
+      title="标签1"
+     >
+
+    <p class="title-text">
+      
+        标签1
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+  
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="comment-card" class="comment-card">
+    <div class="main-title-bar">
+      <div class="main-title-dot"></div>
+      <div class="main-title">Comments </div>
+    </div>
+    <div id="vcomments"></div>
+  </div>
+  <script>
+      new Valine({"enable":true,"appId":null,"appKey":null,"placeholder":"Just go go","pageSize":10,"highlight":true,"serverURLs":null,"el":"#vcomments"});
+  </script>
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 Liberty<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>
