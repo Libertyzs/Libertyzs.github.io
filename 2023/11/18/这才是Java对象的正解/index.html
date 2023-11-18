@@ -53,18 +53,23 @@ var _hmt = _hmt || [];
 
 
   
-  <title>Tag: Pdf | Libertyzs</title>
+  <title>这才是Java对象的正解 | Libertyzs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Libertyzs">
-<meta property="og:url" content="https://libertyzs.github.io/tags/Pdf/index.html">
+  <meta name="description" content="前言：Java对象的理解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="这才是Java对象的正解">
+<meta property="og:url" content="https://libertyzs.github.io/2023/11/18/%E8%BF%99%E6%89%8D%E6%98%AFJava%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%AD%A3%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Libertyzs">
+<meta property="og:description" content="前言：Java对象的理解">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-11-18T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-11-18T11:42:13.401Z">
 <meta property="article:author" content="niu">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Libertyzs" type="application/atom+xml">
@@ -386,44 +391,152 @@ var _hmt = _hmt || [];
     <div id="content-body">
        
 
-<div class="archive-main-card">
-    <div class="archive-top">
-      <div class="main-title-bar">
-        <div class="main-title-dot"></div>
-        <h1 class="article-title">Archives</h1>
-      </div>    
+<article id="post-这才是Java对象的正解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        这才是Java对象的正解
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-11-18T11:38:36.000Z" itemprop="datePublished">2023-11-18</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Java/">Java</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            3.1k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <p>前言：Java对象的理解</p>
+<span id="more"></span>
+
+
+
+<h1 id="这才是-Java-对象的正解"><a href="#这才是-Java-对象的正解" class="headerlink" title="这才是 Java 对象的正解"></a>这才是 Java 对象的正解</h1><blockquote>
+<p>在Java中，”对象” 和 “实例”是面向对象编程（Object-Oriented Programing，OOP）中两个相关但稍有不同的概念。</p>
+</blockquote>
+<p><strong>什么是对象？</strong></p>
+<p>对象（Object）是内存中分配的实际数据结构，它包含了数据和方法。在 Java 中，对象是类的一个实例，可以是具体类（例如 Child）的实例，也可以是抽象类或接口的实现类的实例。对象是具体的实体，它具有特定的属性和行为。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Car</span>&#123;</span><br><span class="line">    String brand;</span><br><span class="line">    String model;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Car</span><span class="params">(String brand,String model)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.brand = brand;</span><br><span class="line">        <span class="built_in">this</span>.model = model;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">(String model)</span>&#123;</span><br><span class="line">        System.out.println(model + <span class="string">&quot;启动&quot;</span>);	</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        <span class="comment">//创建Car的实例</span></span><br><span class="line">    	<span class="type">Car</span> <span class="variable">car1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Car</span>(<span class="string">&quot;本田&quot;</span>,<span class="string">&quot;汽车1&quot;</span>);</span><br><span class="line">        <span class="type">Car</span> <span class="variable">car2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Car</span>(<span class="string">&quot;宝马&quot;</span>,<span class="string">&quot;汽车2&quot;</span>);</span><br><span class="line">        <span class="type">Car</span> <span class="variable">car3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Car</span>(<span class="string">&quot;奔驰&quot;</span>,<span class="string">&quot;汽车3&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中car1、car2、car3就是Car类的三个对象，是三辆不同的车，是三个不同的实例。但是他们都是来自于一个类模板。</p>
+<p>由于实例化的过程是在JVM运行时进行的。所以我们可以看一下这三个实例对象的模板信息：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">    <span class="comment">//创建Car的实例</span></span><br><span class="line">	<span class="type">Car</span> <span class="variable">car1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Car</span>(<span class="string">&quot;本田&quot;</span>,<span class="string">&quot;汽车1&quot;</span>);</span><br><span class="line">    <span class="type">Car</span> <span class="variable">car2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Car</span>(<span class="string">&quot;宝马&quot;</span>,<span class="string">&quot;汽车2&quot;</span>);</span><br><span class="line">    <span class="type">Car</span> <span class="variable">car3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Car</span>(<span class="string">&quot;奔驰&quot;</span>,<span class="string">&quot;汽车3&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    System.out.println(car1.getClass());</span><br><span class="line">    System.out.println(car2.getClass());</span><br><span class="line">    System.out.println(car3.getClass());</span><br><span class="line">   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//输出</span></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">test</span>.Car</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">test</span>.Car</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">test</span>.Car</span><br></pre></td></tr></table></figure>
+
+<p>上面的getClass方法获取的是Car类运行时Class模板反射对象（Class<Car> carClass &#x3D; Car.class;），改对象存储了Car类的元信息（方法、字段、常量等等）。在运行时我们就是通过这个去操作类中的属性方法，通过这个Class对象去new 出一个实例。</Car></p>
+<blockquote>
+<p>注意：Class和class的区别。</p>
+</blockquote>
+<p><strong>实例（Instance）是什么？</strong></p>
+<ul>
+<li>实例是指类的具体实现，即类的一个具体的对象。</li>
+<li>当你使用关键字 <code>new</code> 来实例化一个类时，你就创建了这个类的一个实例。</li>
+<li>实例化（Instance）是指一个对象被创建出来并分配了内存空间的过程。这个对象可以是某个类的实例，也可以是子类的实例。实例化是创建对象的过程。</li>
+</ul>
+<p>&#x3D;&#x3D;看完上面的内容你是不是觉得对象和实例是一样的东西？&#x3D;&#x3D;</p>
+<p>是的，你的理解没有问题：在讨论面向对象编程的语境下，通常情况下”对象”和”实例”被用作同义词，表示类的具体实现。然而，在某些上下文中，人们可能会强调它们之间的微小差异。（我认为对于新手java来说这个区别完全可以忽略，避免混淆）</p>
+<p>比如：</p>
+<p>这里假设我们有一个抽象的动物类和一个具体的猫类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">makeSound</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Cat</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">makeSound</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Meow&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>创建实例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Animal</span> <span class="variable">aniObject</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cat</span>();</span><br><span class="line"><span class="type">Cat</span> <span class="variable">catIntance</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cat</span>();</span><br></pre></td></tr></table></figure>
+
+<p>在这里 aniObject时指向Cat对象的一个引用；而catIntance则是Cat类的一个具体实例（后半句是完全结合前面所讲的，这里是没有问题的，前半句通过下面理解）。</p>
+<p>aniObject 是指向<code>Cat</code>对象的引用，从内存的角度来讲，这个引用指向了<code>Cat</code>类的实例。但是由于我们声明的类型是<code>Animal</code>，在某些上下文中，人们就更愿意称<code>aniObject</code>为<code>Animal</code>类型的对象，强调它是抽象类的一个实例。</p>
+<p>catIntance 是直接声明为 <code>Cat</code> 类型的实例，没有涉及到抽象类的层面，因此直接称为 <code>Cat</code> 类的实例。</p>
+<p>总结：在这种情况下，从代码的角度来看，<code>animalObject</code> 和 <code>catInstance</code> 都是 <code>Cat</code> 类的实例，但在一些讨论中，人们可能更倾向于将 <code>animalObject</code> 视为 <code>Animal</code> 类的对象，强调其类型的抽象层面。这种区别在特定的语境下可能会有所体现。</p>
+<p>&#x3D;&#x3D;如果上面的例子不足以让你理解，就再看一下&#x3D;&#x3D;</p>
+<p>再举个例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Person example = new Person();</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们使用 <code>new</code> 关键字，在内存堆中创建了一个 <code>Person</code> 对象，而 <code>example</code> 是这个 <code>Person</code> 对象的引用变量。在这里，我们可以说 <code>example</code> 这个引用变量对应的对象是 <code>Person</code> 类的一个实例。</p>
+<p>在这样的上下文中，实例和对象通常可以互换使用的概念。</p>
+<p>再来看一个例子，以更好理解 Java 对象：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// Child extends Person</span><br><span class="line">Person example1 = new Child();</span><br></pre></td></tr></table></figure>
+
+<p>在这行代码中，我们使用 <code>new</code> 关键字创建了一个 <code>Child</code> 类的实例（对象），并将这个 <code>Child</code> 对象赋值给了 <code>example1</code> 引用变量。因为 <code>child</code> 是 <code>Person</code> 的子类，所以这里可以将 <code>Child</code> 类的值赋值给 <code>Person</code> 类的引用变量。</p>
+<p>关键点在于，尽管 <code>example1</code> 是 <code>Person</code> 类的引用，但实际上它引用的是 <code>Child</code> 类的对象。这意味着 <code>example1</code> 可以访问 <code>Person</code> 类中的属性和方法，但不能访问 <code>Child</code> 类中特有的属性和方法，除非进行类型转换。</p>
+<p>因此，实例化过程（<code>new Child()</code>）创建了一个对象，并将其分配给一个引用变量，但这并不意味着对象包含了所有的属性和方法，而是取决于引用变量的类型和对象的实际类型。在代码示例中，<code>example1</code> 是 <code>Person</code> 类的引用，但引用的是 <code>Child</code> 的对象，这就反映了多态性的概念，其中一个引用可以引用不同类型的对象，从而在调用相同的方法时产生不同的行为。</p>
+<p>&#x3D;&#x3D;从内存的角度去理解new实例化的过程&#x3D;&#x3D;</p>
+<p>在JVM内存中，jvm拿着ClassLoader生成的Classu对象，在程序运行时去执行 Car car1 &#x3D; new Car(“本田”,”汽车1”)；这样的代码，然后再堆区生成改实例的具体信息，包括里面的属性方法，在栈区生成对应的变量引用。</p>
+
+        
+      </div>
+
+         
     </div>
     
-    
-      
-      
-        
-        <div class="year-line">
-            <div class="year-num">2023</div>
-            <div class="dot-wrapper">
-                <div class="dot"></div>
-            </div>
-            <div class="article-count">1 article</div>
-        </div>
-      
-      <a class="archive-article-link" href="/2023/09/18/JavaSE/" title="JavaSE">
-        <div class="date">09-18</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    JavaSE
-                
-            </div>
-        </div>
-        <div class="tags">
-            #JavaSE #Pdf
-        </div>
-      </a>
-    
+     
   </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/11/17/JVM%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0-ClassLoader%E7%AF%87(%E4%B8%80)/"
+      title="JVM深入学习-ClassLoader篇(一)"
+     >
+
+    <p class="title-text">
+      
+        JVM深入学习-ClassLoader篇(一)
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+  
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="comment-card" class="comment-card">
+    <div class="main-title-bar">
+      <div class="main-title-dot"></div>
+      <div class="main-title">Comments </div>
+    </div>
+    <div id="vcomments"></div>
+  </div>
+  <script>
+      new Valine({"enable":true,"appId":"3hyxp1bhepCSXUoXyEb5CITj-gzGzoHsz","appKey":"xF8o6mI2uiQD19JqMEwxdAXr","placeholder":"Just go go","pageSize":10,"highlight":true,"serverURLs":null,"el":"#vcomments"});
+  </script>
+ 
     </div>
     <div id="footer-wrapper">
       <footer id="footer">
