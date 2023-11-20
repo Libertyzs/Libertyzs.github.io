@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=true"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'true');
+</script>
+<!-- End Google Analytics -->
+
+  
+<!-- Global site tag (gtag.js) - Baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?true";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- End Baidu Analytics -->
+
+  
+<!-- Gaug.es Analytics -->
+<script>
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', 'true');
+    t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
+    t.src = 'https://d36ee2fcip1434.cloudfront.net/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+<!-- End Gaug.es Analytics -->
+
+
+  
+  <title>掌握Java面向对象OOP篇（一） | Libertyzs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <meta name="description" content="前言：为什么要引入面向对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="掌握Java面向对象OOP篇（一）">
+<meta property="og:url" content="https://libertyzs.github.io/2023/11/20/%E6%8E%8C%E6%8F%A1Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1OOP%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
+<meta property="og:site_name" content="Libertyzs">
+<meta property="og:description" content="前言：为什么要引入面向对象">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://libertyzs.github.io/2023/11/20/%E6%8E%8C%E6%8F%A1Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1OOP%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/2794716-20231119135149152-137878454.png">
+<meta property="og:image" content="https://libertyzs.github.io/2023/11/20/%E6%8E%8C%E6%8F%A1Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1OOP%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/2794716-20231119135218577-442680669.png">
+<meta property="article:published_time" content="2023-11-20T05:28:59.000Z">
+<meta property="article:modified_time" content="2023-11-20T05:58:14.521Z">
+<meta property="article:author" content="niu">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="oop">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://libertyzs.github.io/2023/11/20/%E6%8E%8C%E6%8F%A1Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1OOP%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/2794716-20231119135149152-137878454.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Libertyzs" type="application/atom+xml">
+  
+  
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-192.png" sizes="192x192">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-192.png" sizes="192x192">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+     
+<div class="widget color-picker">
+  <h3 class="widget-title">Theme Preview</h3>
+  <div id="banner-toggle-bar">
+    <label for="vehicle1">Show Banner</label><br>
+    <input type="checkbox" id="banner-checkbox" name="banner-checkbox" value="show">
+  </div>
+
+  <div id="preset-list">
+    
+      <div class="preset-btn" style="background-color: #f486aa;" data-hue="0"></div>
+    
+      <div class="preset-btn" style="background-color: #fa8978;" data-hue="30"></div>
+    
+      <div class="preset-btn" style="background-color: #ee9748;" data-hue="60"></div>
+    
+      <div class="preset-btn" style="background-color: #00cab1;" data-hue="180"></div>
+    
+      <div class="preset-btn" style="background-color: #63b3ff;" data-hue="250"></div>
+    
+      <div class="preset-btn" style="background-color: #8ca8ff;" data-hue="270"></div>
+    
+      <div class="preset-btn" style="background-color: #bc98f9;" data-hue="300"></div>
+    
+      <div class="preset-btn" style="background-color: #df8cd8;" data-hue="330"></div>
+    
+      <div class="preset-btn" style="background-color: #ec88c2;" data-hue="345"></div>
+     
+  </div>
+  <input type="range" min="0" max="360" value="135" class="slider" id="colorSlider" step="5" style="width: 100%;">
+  <p class="hue-text">Hue: <span id="hueValue"></span></p>
+  <p class="oklch-tip">You are using an outdated browser that does not support OKLCH colors. The color setting will not take effect.</p>
+</div>
+
+<script>
+  let slider = document.getElementById("colorSlider");
+  let output = document.getElementById("hueValue");
+  let presetList = document.getElementById("preset-list");
+  let r = document.querySelector(':root');
+  output.innerHTML = slider.value; // Display the default slider value
+
+  function getColorNode(l, c, h) {
+    return new Color("oklch", [l, c, h]).to("srgb").toString({format: "hex"});
+  }
+  function setHue(hue) {
+    localStorage.setItem('hue', hue);
+    output.innerHTML = hue;
+    slider.value = hue;
+
+    r.style.setProperty(`--primary-hue`, hue);
+  }
+
+  let storedHue = localStorage.getItem('hue');
+  if (storedHue) {
+    setHue(storedHue);
+  }
+
+  slider.oninput = function() {
+    output.innerHTML = this.value;
+    let hue = this.value;
+    setHue(hue);
+  }
+
+  presetList.onclick = function(event) {
+    let hue = event.target.dataset.hue;
+    if (hue) {
+      setHue(hue);
+    }
+  }
+
+  // Banner switch
+
+  function enableBanner() {
+    r.setAttribute("showBanner", "true");
+    localStorage.setItem('showBanner', "true");
+  }
+  
+  function disableBanner() {
+    r.setAttribute("showBanner", "false");
+    localStorage.setItem('showBanner', "false");
+  }
+
+  let showBannerCheck = document.querySelector("input[name=banner-checkbox]");
+  if (r.getAttribute("showBanner") === "true") {
+    showBannerCheck.checked = true;
+  }
+  showBannerCheck.addEventListener('change', function() {
+    if (this.checked) {
+      enableBanner();
+    } else {
+      disableBanner();
+    }
+  });
+</script>
+  
+  
+  
+    
+<div id="banner" class="">
+  <img src="/images/icon/banner.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>Libertyzs </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="light-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M438.5-829.913v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-829.913Zm0 747.826v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-82.087ZM877.913-438.5h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537t29.476-12.174h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T877.913-438.5Zm-747.826 0h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T82.087-521.5h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T130.087-438.5Zm660.174-290.87-34.239 32q-12.913 12.674-29.565 12.174-16.653-.5-29.327-13.174-12.674-12.673-12.554-28.826.12-16.152 12.794-28.826l33-35q12.913-12.674 30.454-12.674t30.163 12.847q12.709 12.846 12.328 30.826-.38 17.98-13.054 30.653ZM262.63-203.978l-32 34q-12.913 12.674-30.454 12.674t-30.163-12.847q-12.709-12.846-12.328-30.826.38-17.98 13.054-30.653l33.239-31q12.913-12.674 29.565-12.174 16.653.5 29.327 13.174 12.674 12.673 12.554 28.826-.12 16.152-12.794 28.826Zm466.74 33.239-32-33.239q-12.674-12.913-12.174-29.565.5-16.653 13.174-29.327 12.673-12.674 28.826-13.054 16.152-.38 28.826 12.294l35 33q12.674 12.913 12.674 30.454t-12.847 30.163q-12.846 12.709-30.826 12.328-17.98-.38-30.653-13.054ZM203.978-697.37l-34-33q-12.674-12.913-13.174-29.945-.5-17.033 12.174-29.707t31.326-13.293q18.653-.62 31.326 13.054l32 34.239q11.674 12.913 11.174 29.565-.5 16.653-13.174 29.327-12.673 12.674-28.826 12.554-16.152-.12-28.826-12.794ZM480-240q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm-.247-82q65.703 0 111.475-46.272Q637-414.544 637-480.247t-45.525-111.228Q545.95-637 480.247-637t-111.475 45.525Q323-545.95 323-480.247t45.525 111.975Q414.05-322 479.753-322ZM481-481Z"/></svg></span>
+      <span class="dark-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M480.239-116.413q-152.63 0-258.228-105.478Q116.413-327.37 116.413-480q0-130.935 77.739-227.435t206.304-125.043q43.022-9.631 63.87 10.869t3.478 62.805q-8.891 22.043-14.315 44.463-5.424 22.42-5.424 46.689 0 91.694 64.326 155.879 64.325 64.186 156.218 64.186 24.369 0 46.978-4.946 22.609-4.945 44.413-14.076 42.826-17.369 62.967 1.142 20.142 18.511 10.511 61.054Q807.174-280 712.63-198.206q-94.543 81.793-232.391 81.793Zm0-95q79.783 0 143.337-40.217 63.554-40.218 95.793-108.283-15.608 4.044-31.097 5.326-15.49 1.283-31.859.805-123.706-4.066-210.777-90.539-87.071-86.473-91.614-212.092-.24-16.369.923-31.978 1.164-15.609 5.446-30.978-67.826 32.478-108.282 96.152Q211.652-559.543 211.652-480q0 111.929 78.329 190.258 78.329 78.329 190.258 78.329ZM466.13-465.891Z"/></svg></span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS Feed">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M198-120q-25.846 0-44.23-18.384-18.384-18.385-18.384-44.23 0-25.846 18.384-44.23 18.384-18.385 44.23-18.385 25.846 0 44.23 18.385 18.384 18.384 18.384 44.23 0 25.845-18.384 44.23Q223.846-120 198-120Zm538.385 0q-18.846 0-32.923-13.769-14.076-13.769-15.922-33.23-8.692-100.616-51.077-188.654-42.385-88.039-109.885-155.539-67.5-67.501-155.539-109.885Q283-663.462 182.385-672.154q-19.461-1.846-33.23-16.23-13.769-14.385-13.769-33.846t14.076-32.922q14.077-13.461 32.923-12.23 120.076 8.692 226.038 58.768 105.961 50.077 185.73 129.846 79.769 79.769 129.846 185.731 50.077 105.961 58.769 226.038 1.231 18.846-12.538 32.922Q756.461-120 736.385-120Zm-252 0q-18.231 0-32.423-13.461t-18.653-33.538Q418.155-264.23 348.886-333.5q-69.27-69.27-166.501-84.423-20.077-4.462-33.538-18.961-13.461-14.5-13.461-33.346 0-19.076 13.884-33.23 13.884-14.153 33.115-10.922 136.769 15.384 234.384 112.999 97.615 97.615 112.999 234.384 3.231 19.23-10.538 33.115Q505.461-120 484.385-120Z"/></svg>
+      </a>
+    
+    <div id="nav-menu-btn" class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M177.37-252.282q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Zm0-186.218q-17.453 0-29.477-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T177.37-521.5h605.26q17.453 0 29.477 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T782.63-438.5H177.37Zm0-186.217q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Z"/></svg>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS Feed">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/images/icon/icon_t2.jpg></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">Liberty </div>
+      <div class="dot"></div>
+      <div class="subtitle">Java Adventure </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://www.google.com.hk/" title="Google"><i class="fa-brands fa-google"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://store.steampowered.com" title="Steam"><i class="fa-brands fa-steam"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/Libertyzs" title="GitHub"><i class="fa-brands fa-github"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Categories</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/Hexo/">
+                Hexo
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Java/">
+                Java
+                <div class="category-count">5</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mixed/">
+                mixed
+                <div class="category-count">1</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Tags</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ClassLoader/" rel="tag">ClassLoader</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaSE/" rel="tag">JavaSE</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Pdf/" rel="tag">Pdf</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Uparticle/" rel="tag">Uparticle</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/oop/" rel="tag">oop</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vivia/" rel="tag">vivia</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Archives</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/11 ">
+          November 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          September 2023 
+          <div class="archive-count">4 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Recent Posts</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/11/20/%E6%8E%8C%E6%8F%A1Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1OOP%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/" title="掌握Java面向对象OOP篇（一）" >
+            <div class="recent-link-text">
+              掌握Java面向对象OOP篇（一）
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/11/18/%E8%BF%99%E6%89%8D%E6%98%AFJava%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%AD%A3%E8%A7%A3/" title="这才是Java对象的正解" >
+            <div class="recent-link-text">
+              这才是Java对象的正解
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/11/17/JVM%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0-ClassLoader%E7%AF%87(%E4%B8%80)/" title="JVM深入学习-ClassLoader篇(一)" >
+            <div class="recent-link-text">
+              JVM深入学习-ClassLoader篇(一)
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/24/Java%E9%9D%A2%E8%AF%95/" title="Java面试" >
+            <div class="recent-link-text">
+              Java面试
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/18/Hexo-GitHub%E9%83%A8%E7%BD%B2%E9%AD%94%E6%94%B9%E5%9F%BA%E7%A1%80-config/" title="Hexo-GitHub部署魔改基础-config" >
+            <div class="recent-link-text">
+              Hexo-GitHub部署魔改基础-config
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-掌握Java面向对象OOP篇（一）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        掌握Java面向对象OOP篇（一）
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-11-20T05:28:59.000Z" itemprop="datePublished">2023-11-20</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Java/">Java</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            7.5k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oop/" rel="tag">oop</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <p>前言：为什么要引入面向对象</p>
+<span id="more"></span>
+
+
+
+
+
+
+
+<blockquote>
+<p>边学边记 – OOP(Object Orientated Programing)</p>
+</blockquote>
+<h2 id="1-为什么要引入面向对象？"><a href="#1-为什么要引入面向对象？" class="headerlink" title="1. 为什么要引入面向对象？"></a>1. 为什么要引入面向对象？</h2><p>原因：&#x3D;&#x3D;封装、继承、多态&#x3D;&#x3D;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">举个例子理解面向对象代码的好处：</span><br><span class="line">比如：我们有一个实际问题，假设现在一个宠物店有两只小狗， 第一只叫做小白，年龄2岁，白色；第二只叫做小红，年龄3岁，红色；现在我们的宠物店的系统可以让用户在输入不同狗的名字，能显示不同的狗的信息，如果没有，就输出该宠物店没有这条狗。</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-1-非面向对象"><a href="#1-1-非面向对象" class="headerlink" title="1.1 非面向对象"></a>1.1 非面向对象</h3><p>不使用面向对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> study;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">oobject1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] agrs)</span>&#123;</span><br><span class="line"><span class="comment">//        小白狗</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">dogName</span> <span class="operator">=</span> <span class="string">&quot;小白&quot;</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">dogAge</span> <span class="operator">=</span> <span class="number">2</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">dogColor</span> <span class="operator">=</span> <span class="string">&quot;白色&quot;</span>;</span><br><span class="line"><span class="comment">//        小红狗</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">dogName1</span> <span class="operator">=</span> <span class="string">&quot;小红&quot;</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">dogAge1</span> <span class="operator">=</span> <span class="number">2</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">dogColor1</span> <span class="operator">=</span> <span class="string">&quot;白色&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入狗的名字：&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">queryDogName</span> <span class="operator">=</span> scanner.nextLine();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(queryDogName.equals(<span class="string">&quot;小红&quot;</span>))&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;狗名： &quot;</span> + dogName1 + <span class="string">&quot;\n&quot;</span> + <span class="string">&quot;狗龄： &quot;</span> + dogAge1 + <span class="string">&quot;\n&quot;</span> + <span class="string">&quot;颜色： &quot;</span> + dogColor1);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (queryDogName.equals(<span class="string">&quot;小白&quot;</span>))&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;狗名： &quot;</span> + dogName + <span class="string">&quot;\n&quot;</span> + <span class="string">&quot;狗龄： &quot;</span> + dogAge + <span class="string">&quot;\n&quot;</span> + <span class="string">&quot;颜色： &quot;</span> + dogColor);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;该宠物点没有这条狗&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">oobject2</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line"></span><br><span class="line">        String[] dogName = &#123;<span class="string">&quot;小白&quot;</span>,<span class="string">&quot;小红&quot;</span>&#125;;</span><br><span class="line">        <span class="type">int</span>[] dogAge = &#123;<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line">        String[] dogColor = &#123;<span class="string">&quot;白色&quot;</span>,<span class="string">&quot;红色&quot;</span>&#125;;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;请输入狗名：&quot;</span>);</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="type">String</span> <span class="variable">queryDogName</span> <span class="operator">=</span> s.nextLine();</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;dogName.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(queryDogName.equals(dogName[i]))&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;狗名： &quot;</span> + dogName[i] + <span class="string">&quot;\n&quot;</span> + <span class="string">&quot;狗龄： &quot;</span> + dogAge[i] + <span class="string">&quot;\n&quot;</span> + <span class="string">&quot;颜色： &quot;</span> + dogColor[i]);</span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!flag)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;该宠物点没有这条狗&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<p><img src="/2023/11/20/%E6%8E%8C%E6%8F%A1Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1OOP%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/2794716-20231119135149152-137878454.png" alt="image-20231119135146411"></p>
+<h3 id="1-2-面向对象："><a href="#1-2-面向对象：" class="headerlink" title="1.2 面向对象："></a>1.2 面向对象：</h3><p>使用面向对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">oobject3</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String dogName;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> dogAge;</span><br><span class="line">    <span class="keyword">private</span> String dogColor;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">oobject3</span><span class="params">(String dogName,<span class="type">int</span> dogAge,String dogColor)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.dogName = dogName;</span><br><span class="line">        <span class="built_in">this</span>.dogAge = dogAge;</span><br><span class="line">        <span class="built_in">this</span>.dogColor = dogColor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">getInfo</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;狗名： &quot;</span> + dogName + <span class="string">&quot;\n&quot;</span> + <span class="string">&quot;狗龄： &quot;</span> + dogAge + <span class="string">&quot;\n&quot;</span> + <span class="string">&quot;颜色： &quot;</span> + dogColor);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getDogName</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> dogName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line"><span class="comment">//        创建两只狗，也就是两只对象</span></span><br><span class="line">        <span class="type">oobject3</span> <span class="variable">whiteDog</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">oobject3</span>(<span class="string">&quot;小白&quot;</span>,<span class="number">2</span>,<span class="string">&quot;白色&quot;</span>);</span><br><span class="line">        oobject3 reDog= <span class="keyword">new</span> <span class="title class_">oobject3</span>(<span class="string">&quot;小红&quot;</span>,<span class="number">3</span>,<span class="string">&quot;红色&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 用户输入狗的名字</span></span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        System.out.print(<span class="string">&quot;请输入狗的名字：&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">queryDogName</span> <span class="operator">=</span> scanner.nextLine();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(queryDogName.equals(whiteDog.dogName))&#123;</span><br><span class="line">            whiteDog.getInfo();</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (queryDogName.equals(reDog.dogName))&#123;</span><br><span class="line">            reDog.getInfo();</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;该宠物点没有这条狗&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/2023/11/20/%E6%8E%8C%E6%8F%A1Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1OOP%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/2794716-20231119135218577-442680669.png" alt="image-20231119135216160"></p>
+<p>由上面两个例子，我们从代码的角度去看，为什么引入面向对象会更方便。</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">当不使用面向对象的方式，采用数组或独立变量的方式进行编程时，每个“对象”（这里是指表示狗的信息）都需要通过独立的变量或数组元素进行定义。这意味着对于每一只狗，都需要单独声明和初始化相关的变量。当我们有成千上万个这种“对象”时，就需要重复定义更多的代码，这就会导致：</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>.冗余和代码膨胀：随着狗的数量的增加	，代码中的相似的定义和初始化操作变得冗余。这导致了代码的膨胀，使得程序变得庞大且难以维护。</span><br><span class="line"><span class="comment">//比如：我们需要反复的使用String dogName = &quot;example&quot;;等等去定义属性。</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span>.可读性很差： 大量的重复代码使得程序的可读性变差。维护人员很难在代码中找到并理解与每只狗相关的所有信息。</span><br><span class="line"><span class="comment">//因为代码中有大量的对属性的定义，所以很难对应找到</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>.难以修改：如果我们要对狗的属性进行修改、或者添加新的属性，那么整个代码的维护更新就会非常难以进行，并且容易出错。</span><br><span class="line"><span class="comment">//当代码量上来的时候，我们如果要给狗添加一个毛的长短的属性，那么我们就要添加几万行代码，很不合理。</span></span><br><span class="line"></span><br><span class="line"><span class="number">4</span>.缺乏结构性：独立变量或数组元素的方式缺乏结构，不易于组织和管理相关的信息。随着信息的增加，代码可能变得混乱且难以理解。</span><br><span class="line"><span class="comment">//代码看起来没有章法，不知道从哪里入手</span></span><br><span class="line"></span><br><span class="line">使用面向对象的好处主要体现在以下几个方面：</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>.封装和抽象： 面向对象编程强调封装，将对象的属性和行为封装在一起，提供了更高层次的抽象。这使得程序员可以专注于对象的接口，而不必关心内部的实现细节。这样的封装和抽象提高了代码的模块化和可维护性。</span><br><span class="line"><span class="comment">//比如我们的oobject3中的非主类部分，就是把属性和方法放在了（封装）类oobject3中，那么这个时候我们的主类去 new 出一个对象时，就可以直接使用这些属性和方法。因为这个方法和属性被封装成为了一个模板。我们通过这个模板new的狗子的这些属性和方法的使用都一样。那么这个模板就实现了很好的统一也降低了代码的重复量。这就是封装的好处。</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span>.可维护性和可扩展性： 面向对象的编程模型使得代码更易于维护和扩展。通过创建类和对象，可以轻松地添加新的功能或修改现有功能，而不必改变整个程序的结构。这种灵活性使得程序更具可维护性和可扩展性。</span><br><span class="line"><span class="comment">//当我们要添加属性时，我们只需要在oobject3中加一行代码，private String type; 那么所有的狗就可以用这个属性，不用去大量的改动代码。</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>.代码重用： 面向对象的设计强调重用性。通过创建类和继承，可以在不同的地方重复使用相同的代码。这降低了重复编码的需求，提高了开发效率。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">4</span>.继承和多态： 继承和多态是面向对象编程的两个核心概念。继承允许创建一个类，继承另一个类的属性和方法，从而实现代码的重用。多态性允许同一个方法在不同的对象上表现出不同的行为，提高了代码的灵活性和可扩展性。</span><br><span class="line"><span class="comment">//在上面的例子中没有涵盖对继承和多态的理解，在下面会有</span></span><br><span class="line"></span><br><span class="line">更好的组织结构： 面向对象的设计强调将现实世界的问题映射到代码结构中。通过创建类和对象，能够更自然地模拟问题领域中的实体和关系，使得代码更易于理解和维护。</span><br><span class="line"></span><br><span class="line">团队协作： 面向对象的设计使得多人协作更为容易。每个类可以被视为一个独立的模块，不同的团队成员可以独立地开发和测试各自负责的类。这有助于提高团队的生产力和协作效率。</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>所以在Java中引入面向对象，以及使用面向对象都是必要的。</p>
+</blockquote>
+<h2 id="2-面向对象-VS-面向过程"><a href="#2-面向对象-VS-面向过程" class="headerlink" title="2. 面向对象 VS 面向过程"></a>2. 面向对象 VS 面向过程</h2><blockquote>
+<p>这里假设面试官问你面向对象和面向过程的区别，我们怎么回答？（已经汗流浃背了 ~ ）</p>
+</blockquote>
+<h3 id="2-1-语言"><a href="#2-1-语言" class="headerlink" title="2.1 语言"></a>2.1 语言</h3><p>面向对象语言：</p>
+<ol>
+<li>Java ：毋庸置疑，Java一切皆对象，肯定是面向对象编程</li>
+<li>C++ ：一种支持 面向对象和面向过程编程的语言</li>
+<li>C#（C Sharp）： 由Microsoft开发，用于.NET平台，支持面向对象编程和其他现代编程概念。</li>
+<li>Python : Python是一种多范式的编程语言，支持面向对象编程、面向过程编程以及函数式编程。</li>
+<li>Ruby： 一种动态脚本语言，以其简洁而强大的面向对象特性而受欢迎。</li>
+<li>Swift： 由Apple开发，专为iOS和macOS设计，具有现代化的面向对象特性。</li>
+<li>Objective-C： 用于iOS和macOS的编程语言，支持面向对象编程。</li>
+</ol>
+<p>面向过程语言：</p>
+<ol>
+<li>C： 一种广泛使用的面向过程编程语言，以其效率和直接的硬件访问而受欢迎。</li>
+<li>C++ ：C++是一种多范式的编程语言，它既支持面向对象编程（具有类、继承等特性），也支持面向过程编程。在C++中，你可以采用纯粹的面向过程的编码风格，就像在C语言中一样。</li>
+<li>Python :  Python也是一种多范式的编程语言，支持面向对象编程、面向过程编程以及函数式编程。尽管Python提供了丰富的面向对象特性，但也允许开发者采用面向过程的编程风格。</li>
+<li>Fortran： Fortran是一种主要用于科学和工程计算的编程语言，以其数值计算和面向过程的特性而著称。</li>
+</ol>
+<h3 id="2-2-OOP-vs-OPP"><a href="#2-2-OOP-vs-OPP" class="headerlink" title="2.2 OOP vs OPP"></a>2.2 OOP vs OPP</h3><blockquote>
+<p> 面向对象和面向过程的本质区别就是处理逻辑（思维模式）的不同。</p>
+</blockquote>
+<p>1.面向过程的思维模式就是简单的线性思维，解决问题首先陷入第一步干什么、第二部干什么的细节中。这种思维模式适合处理一些简单的事务，别入从A走到B，把垃圾倒入垃圾桶等等。如果面对复杂的问题，那么解决就会很麻烦。</p>
+<p>2.相反，面向对象更注重的是对问题的整体抽象和建模。它将问题中的实体抽象为一个个的对象，关注对象之间的交互。让对象去解决问题，这样的思维模式更加自然，更加贴近生活。</p>
+<p>考虑一个复杂任务，比如设计并制造一艘航天飞船，面向过程的思维模式可能会让人感到困扰，因为这需要考虑众多细节和步骤。然而，通过面向对象的思维模式，我们可以将这个庞大的任务分解成对象，例如“引擎”、“控制系统”、“舱体”等，每个对象都有特定的属性和行为。这种抽象和分解使得我们能够更清晰地理解并解决问题，而不会被淹没在无尽的步骤中。</p>
+<h2 id="3-感受面向对象的美"><a href="#3-感受面向对象的美" class="headerlink" title="3.感受面向对象的美"></a>3.感受面向对象的美</h2><p>我们直接使用代码去理解这个东西！！！  去感受为什么Java中的封装、继承、多态的好处</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> study;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">shape</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String color;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//构造方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">shape</span><span class="params">(String color)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.color = color;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getColor</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> color;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//多态的体现之处</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="type">double</span> <span class="title function_">getArea</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Circle</span> <span class="keyword">extends</span> <span class="title class_">shape</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> radius;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Circle</span><span class="params">(String color ,<span class="type">double</span> radius)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(color);</span><br><span class="line">        <span class="built_in">this</span>.radius = radius;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getArea</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Math.PI * Math.pow(radius,<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Rectangle</span> <span class="keyword">extends</span> <span class="title class_">shape</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> len;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> width;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Rectangle</span><span class="params">(String color,<span class="type">double</span> len , <span class="type">double</span> width)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(color);</span><br><span class="line">        <span class="built_in">this</span>.len = len;</span><br><span class="line">        <span class="built_in">this</span>.width = width;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getArea</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> len * width;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">oobject2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 创建 Circle 对象</span></span><br><span class="line">        <span class="type">Circle</span> <span class="variable">circle</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Circle</span>(<span class="string">&quot;Red&quot;</span>, <span class="number">5.0</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;Circle Area: &quot;</span> + circle.getArea());</span><br><span class="line">        System.out.println(<span class="string">&quot;Circle Color: &quot;</span> + circle.getColor());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建 Rectangle 对象</span></span><br><span class="line">        <span class="type">Rectangle</span> <span class="variable">rectangle</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Rectangle</span>(<span class="string">&quot;Blue&quot;</span>, <span class="number">4.0</span>, <span class="number">6.0</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;Rectangle Area: &quot;</span> + rectangle.getArea());</span><br><span class="line">        System.out.println(<span class="string">&quot;Rectangle Color: &quot;</span> + rectangle.getColor());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>上面的例子中，我们很清楚的可以看到Java中封装、继承、多态的好处。下面我在赘述一遍 ┭┮﹏┭┮</p>
+<p>我们在抽象类 shape中将color属性被声明为私有（private），外部类无法直接访问。颜色的访问和设置通过公共方法getColor进行，这体现了封装的概念、隐藏类内部实现细节。</p>
+<p><code>Circle</code> 和 <code>Rectangle</code> 子类继承了 <code>Shape</code> 类，并通过调用 <code>super(color)</code> 访问了父类的构造方法，这也是一种封装的体现，子类不需要直接访问父类的私有属性。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">封装的好处：</span><br><span class="line">封装提高了代码的安全性：将属性声明为私有，通过公有方法进行访问，防止外部直接修改对象的内部状态值，从而提高数据的安全性。</span><br><span class="line">封装隐藏细节：封装允许隐藏内部实现细节，使得使用者只需要关注对象的公有接口。这样的设计可以降低了系统的复杂性，是代码更容易理解和维护。</span><br><span class="line">封装提高灵活性：如果内部实现需要更改，只需保持公有接口不变，使用者不受影响。这种灵活性使得系统更容易适应变化。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在 <code>Circle</code> 和  <code>Rectangel</code> 类都是通过关键字extends继承自<code>shape</code> 抽象类。这使得子类获得了父类的属性和方法，实现了代码的重用。例如：两个类都继承父类的color属性和getColor方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">继承的好处：</span><br><span class="line">代码重用： 继承允许子类重用父类的代码，避免了重复编写相似的代码，降低了代码的重复率。</span><br><span class="line">可维护性： 当需要修改或扩展功能时，只需在父类中进行修改，子类将自动继承这些变化。这降低了修改代码的风险，提高了可维护性。</span><br><span class="line">多态支持： 继承是实现多态的基础。通过继承，不同的子类可以被视为同一类型的对象，提供了更灵活的代码结构。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在 <code>shape</code>抽象类的抽象方法getArea中体现了多态。不同的子类分别重写了这个方法，根据自己的需求提供了具体的实现。在测试类中，通过统一的接口 <code>getArea</code> 调用，实际上调用了各个子类的实现，展现了多态性。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">多态的好处：</span><br><span class="line">灵活性和扩展性： 多态允许同一类型的对象以不同的方式响应相同的方法调用。这提高了代码的灵活性和可扩展性，使得系统更容易适应变化。</span><br><span class="line">简化代码： 多态性允许使用者通过一个统一的接口调用不同类型的对象，简化了代码，提高了可读性。</span><br><span class="line">实现抽象概念： 多态性使得我们能够以更抽象的方式思考和设计问题，将实际对象视为抽象概念的实例，有助于更清晰地理解和解决问题。</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/11/18/%E8%BF%99%E6%89%8D%E6%98%AFJava%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%AD%A3%E8%A7%A3/"
+      title="这才是Java对象的正解"
+     >
+
+    <p class="title-text">
+      
+        这才是Java对象的正解
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+  
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="comment-card" class="comment-card">
+    <div class="main-title-bar">
+      <div class="main-title-dot"></div>
+      <div class="main-title">Comments </div>
+    </div>
+    <div id="vcomments"></div>
+  </div>
+  <script>
+      new Valine({"enable":true,"appId":"3hyxp1bhepCSXUoXyEb5CITj-gzGzoHsz","appKey":"xF8o6mI2uiQD19JqMEwxdAXr","placeholder":"Just go go","pageSize":10,"highlight":true,"serverURLs":null,"el":"#vcomments"});
+  </script>
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 Liberty<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>
